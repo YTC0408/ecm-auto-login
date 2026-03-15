@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "name": "ecm-auto-login",
+  "description": "Zero-Knowledge Credential Management & Auto-Login",
+  "entry_point": "ecm_skill.py",
+  "tools": [
+    {
+      "name": "ecm_set_master_password",
+      "description": "Set master password in OS keyring",
+      "parameters": {
+        "password": {"type": "string", "required": true}
+      }
+    },
+    {
+      "name": "ecm_has_master_password", 
+      "description": "Check if master password exists",
+      "parameters": {}
+    },
+    {
+      "name": "ecm_add_credential",
+      "description": "Add new credential",
+      "parameters": {
+        "name": {"type": "string", "required": true},
+        "url": {"type": "string", "required": true},
+        "username": {"type": "string", "required": true},
+        "password": {"type": "string", "required": true},
+        "notes": {"type": "string", "required": false}
+      }
+    },
+    {
+      "name": "ecm_list_credentials",
+      "description": "List all credentials (sanitized)",
+      "parameters": {}
+    },
+    {
+      "name": "ecm_get_credential",
+      "description": "Get credential by name",
+      "parameters": {
+        "name": {"type": "string", "required": true}
+      }
+    },
+    {
+      "name": "ecm_update_credential",
+      "description": "Update credential",
+      "parameters": {
+        "entry_id": {"type": "string", "required": true},
+        "name": {"type": "string", "required": false},
+        "url": {"type": "string", "required": false},
+        "username": {"type": "string", "required": false},
+        "password": {"type": "string", "required": false},
+        "notes": {"type": "string", "required": false}
+      }
+    },
+    {
+      "name": "ecm_delete_credential",
+      "description": "Delete credential",
+      "parameters": {
+        "entry_id": {"type": "string", "required": true}
+      }
+    },
+    {
+      "name": "ecm_login",
+      "description": "Auto-login to website (closed-loop)",
+      "parameters": {
+        "site_name": {"type": "string", "required": true},
+        "headless": {"type": "boolean", "required": false}
+      }
+    }
+  ]
+}
