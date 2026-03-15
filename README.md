@@ -97,7 +97,7 @@ python -c "from ecm_skill import ecm_login; import json; print(json.dumps(ecm_lo
 
 [*] Found credential for: GitHub
     URL: https://github.com/login
-    Username: ytch2004@qq.com
+    Username: your-email@example.com
     [OK] Password decrypted internally
 [OK] Stealth browser started
     [OK] Filled username: input[name="email"]
